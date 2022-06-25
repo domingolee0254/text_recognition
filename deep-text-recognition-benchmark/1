@@ -1,0 +1,14 @@
+#!/bin/bash
+
+GT_DIR=/home/text_recog/data_dir/model6/
+GT_FILE=gt_train.txt
+
+INPUT_DIR=/home/text_recog/data_dir/model6/train
+OUTPUT_DIR=/home/text_recog/data_dir/model6/model6_lmdb
+
+mkdir /home/text_recog/data_dir/model6/model6_lmdb
+
+python create_lmdb_dataset.py \
+    --gtFile ${GT_DIR}${GT_FILE} \
+    --inputPath ${INPUT_DIR} \
+    --outputPath ${OUTPUT_DIR}
